@@ -2,6 +2,38 @@
 
 Reusable, platform-agnostic Agent Skills pack for software development work. Each skill lives in its own folder and contains a single required `SKILL.md` file written in portable Agent Skills format.
 
+## Install For Codex
+
+Run either local install script from this repository:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-codex-skills.ps1
+```
+
+```bash
+bash ./scripts/install-codex-skills.sh
+```
+
+Default install target:
+
+- `$CODEX_HOME\skills` if `CODEX_HOME` is set
+- otherwise `$HOME\.codex\skills`
+
+Useful options:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-codex-skills.ps1 -Force
+powershell -ExecutionPolicy Bypass -File .\scripts\install-codex-skills.ps1 -Mode Symlink
+powershell -ExecutionPolicy Bypass -File .\scripts\install-codex-skills.ps1 -TargetRoot E:\custom\skills
+```
+
+```bash
+bash ./scripts/install-codex-skills.sh --force
+bash ./scripts/install-codex-skills.sh --mode symlink
+bash ./scripts/install-codex-skills.sh --target-root "$HOME/custom-skills"
+```
+
+Use `-Force` or `--force` to replace already-installed skill folders. Use symlink mode when you want repo updates to reflect immediately across projects.
 ## Structure
 
 ```text
@@ -106,3 +138,4 @@ These skills avoid provider-specific fields and stack-specific assumptions. To a
 - Skills prefer incremental, behaviour-preserving work.
 - Skills tell agents to inspect repository reality before concluding.
 - Skills are markdown-only by design for easy reuse across providers.
+
