@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task Planning File Generator"
+  short_description: "Generate TASK.md planning prompts"
+  default_prompt: "Use $task-planning-file-generator to draft a repo-grounded TASK.md planning prompt before implementation starts."
